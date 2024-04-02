@@ -1,0 +1,24 @@
+version: "3.8"
+
+services:
+  resource-service:
+    depends_on:
+      - resource-postgres
+    image: "resource-service"
+    container_name: "resource-service"
+    ports:
+      - 8082:8082
+    environment:
+      - BPL_JVM_THREAD_COUNT=50
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://resource-postgres:5432/resource_service_db
+      - SPRING_PROFILES_ACTIVE=testdata
+
+  resource-postgres:
+    image: "postgres:14.4"
+    container_name: "resource-postgres"
+    ports:
+      - 5432:5432
+    environment:
+      - POSTGRES_USER=user
+      - POSTGRES_PASSWORD=password
+      - POSTGRES_DB=resource_service_db
