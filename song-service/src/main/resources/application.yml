@@ -1,0 +1,25 @@
+server:
+  port: 8081
+spring:
+  application:
+    name: song-service
+  # datasource configuration
+  datasource:
+    url: jdbc:postgresql://localhost:5432/songservice
+    username: postgres
+    password: root
+    driverClassName: org.postgresql.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+#eureka:
+#  client:
+#    serviceUrl:
+#      defaultZone: http://localhost:8083/eureka
+
+
+#
+#song-service:
+#  path: /api/v1/songs
