@@ -5,9 +5,9 @@ spring:
     name: song-service
   # datasource configuration
   datasource:
-    url: jdbc:postgresql://localhost:5432/songservice
-    username: postgres
-    password: root
+    url: jdbc:postgresql://localhost:5432/songservicedb
+    username: user
+    password: password
     driverClassName: org.postgresql.Driver
 
   jpa:
