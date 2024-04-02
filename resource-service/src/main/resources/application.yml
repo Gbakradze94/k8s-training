@@ -1,0 +1,60 @@
+server:
+  port: 8082
+# datasource configuration
+spring:
+  application:
+    name: resource-service
+  datasource:
+    url: jdbc:postgresql://localhost:5432/resourceservicedb
+    username: user
+    password: password
+    driverClassName: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+#
+#logging:
+#  level:
+#    org:
+#      hibernate: INFO
+#      SQL: DEBUG
+#      cache: DEBUG
+#      stat: DEBUG
+#
+#song-service:
+#  path: /api/v1/songs
+#eureka:
+#  client:
+#    serviceUrl:
+#      defaultZone: http://localhost:8083/eureka
+
+
+#server:
+#  port: 8082
+## datasource configuration
+#spring:
+#  application:
+#    name: resource-service
+#  datasource:
+#    url: jdbc:postgresql://postgresqldb:5432/resourceservice
+#    username: postgres
+#    password: root
+#    driver-class-name: org.postgresql.Driver
+#  jpa:
+#    hibernate.ddl-auto: create-drop
+#
+#logging:
+#  level:
+#    org:
+#      hibernate: INFO
+#      SQL: DEBUG
+#      cache: DEBUG
+#      stat: DEBUG
+
+song-service:
+  path: /api/v1/songs
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8083/eureka
