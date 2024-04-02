@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+
+#  The type of object to create
+kind: Deployment
+
+# The name of the deployment
+metadata:
+  name: song-service
+  # A set of labels attached to the Deployment
+  labels:
+    app: song-service
+spec:
+  selector:
+    matchLabels:
+      app: song-service
+  template:
+    metadata:
+      labels:
+        app: song-service
+    spec:
+      containers:
+        - name: song-service
+          image: song-service
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 8081
+          env:
+            - name: BPL_JVM_THREAD_COUNT
+              value: "50"
+            - name: SPRING_DATASOURCE_URL
+              value: jdbc:postgresql://song-postgres/song_service_db
+            - name: SPRING_PROFILES_ACTIVE
+              value: testdata

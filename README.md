@@ -34,7 +34,7 @@ $ docker run -d \
 --net song-network \
 -e POSTGRES_USER=user \
 -e POSTGRES_PASSWORD=password \
--e POSTGRES_DB=songservicedb \
+-e POSTGRES_DB=song_service_db \
 -p 5432:5432 \
 postgres:14.4
 ```
@@ -56,10 +56,64 @@ $ docker run -d \
 --net song-network \
 -p 8081:8081 \
 -e SPRING_DATASOURCE_URL=
-jdbc:postgresql://song-postgres:5432/songservicedb \
+jdbc:postgresql://song-postgres:5432/song_service_db \
 -e SPRING_PROFILES_ACTIVE=testdata \
 song-service
 ```
 
 ### After you are done, you can delete both containers: <br/>
 ``` $ docker rm -f song-service song-postgres ```
+
+## Using Kubernetes
+In order to use kubernetes, make sure you have installed it on your machine.
+To create a new kubernetes cluster named <b>song</b> on top of Docker, and to
+declare the resource limits for CPU and memory, you need to run: <br/>
+``` minikube start --cpus 2 --memory 4g --driver docker --profile song ```
+
+To get the list of all nodes in the cluster: <br/>
+``` kubectl get nodes ```
+The cluster which we made with the command above, is composed of a single node, which
+hosts the Control Plane and acts as a worker node for deploying containerized workloads.
+
+To get all available contexts with which you can interact: <br/>
+``` kubectl config get-contexts ```
+To get current cotext: <br/>
+``` kubectl config current-context ```
+To change context: <br/>
+``` kubectl config use-context song ```
+
+At any time, you can stop the cluster with ``` minikube stop --profile song  ``` and start it 
+again with ``` minikube start --profile song ```. If you ever
+want to delete it and start over, you can run the ``` minikube delete --profile song ``` command.
+<br/>
+To deploy PostgreSQL in your cluster, navigate to song-deployment/kubernetes/platform/development
+folder and run:
+``` kubectl apply -f services ```
+The result will be a Pod running a PostgreSQL container in your local Kubernetes cluster.
+You can check it with the following command: <br/>
+``` kubectl get pod ``` <br/>
+
+If at any point you need to undeploy the database, you can 
+run the ``` kubectl delete -f services  ``` command from the same folder.
+
+### Creating deployment for the Spring Boot Applications
+For both of the microservices (song-service and resource-service), in order to create
+a kubernetes deployment, we need to create k8s folder inside the projects' root directories,
+and include two yml files, which will be deployment descriptors.
+We need to add deployment.yml file. <br/>
+The <b>spec</b> section of a Deployment manifest contains a selector part to define a strategy for
+identifying which objects should be scaled by a ReplicaSet.
+
+By default, minikube does not have access to your local container images, so it will
+not find the images you have just built for song-service and resource-service.
+You can manually import the image into your local cluster: <br/>
+``` minikube image load song-service --profile song ``` <br/>
+Same command goes for resource-service, only the name will be changed.
+Now that you have a deployment manifest we need to apply it by running: <br/>
+``` kubectl apply -f k8s/deployment.yml ``` <br/>
+The command is processed by the Kubernetes Control Plane, which will create and maintain all the related objects
+in the cluster. You can verify which objects have been created with the following command: <br/>
+``` kubectl get all -l app=song-service ``` <br/>
+To get logs: <br/>
+``` kubectl logs deployment/catalog-service ```
+
