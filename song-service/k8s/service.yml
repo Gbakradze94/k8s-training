@@ -10,7 +10,5 @@ spec:
     app: song-service
   ports:
     - protocol: TCP
-      # Port exposed by the service
       port: 80
-      # The port exposed by the Pods targeted by the Service
       targetPort: 8081

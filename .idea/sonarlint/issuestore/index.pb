@@ -37,3 +37,11 @@ J
 resource-service/readme.md,f\0\f099eb35231d87043a2cd551f7487108ca488524
 9
 	README.md,8\e\8ec9a00bfd09b3190ac6b22251dbb1aa95a0579d
+€
+Psong-deployment/kubernetes/platform/development/services/resource-postgresql.yml,5\7\57b5406abae4f1653e970dbbb7a2d99d49d004df
+P
+ resource-service/settings.gradle,e\4\e4de078c9ce6e87d5a7856ecaccfaaceff914666
+G
+song-service/Dockerfile,9\6\967594a3b3462565bfe03ebdb2d6de001ff63e7f
+O
+song-service/docker-compose.yml,d\d\dd50015c1ba7b10d0025dd946ef234d15f293cfa

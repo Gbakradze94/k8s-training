@@ -35,7 +35,7 @@ $ docker run -d \
 -e POSTGRES_USER=user \
 -e POSTGRES_PASSWORD=password \
 -e POSTGRES_DB=song_service_db \
--p 5432:5432 \
+-p 5432:5431 \
 postgres:14.4
 ```
 
@@ -123,7 +123,7 @@ To apply service manifest: <br/>
 Other applications within the cluster can reach this service either by
 ClusterIP or its name, but what about us?  How can we reach it? One way is to use
 port forwarding feature offered by kubernetes: <br/>
-``` kubectl port-forward service/catalog-service 9001:80 ```
+``` kubectl port-forward service/song-service 8081:81 ```
 Forwarding from 127.0.0.1:8081 -> 8081
 Forwarding from [::1]:8081 -> 8081 
 

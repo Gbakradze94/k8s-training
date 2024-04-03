@@ -2,8 +2,8 @@ FROM eclipse-temurin:17 AS builder
 # OpenJDK base image for the first stage
 WORKDIR workspace
 ARG JAR_FILE=build/libs/*.jar
-COPY ${JAR_FILE} resource-service.jar
-RUN java -Djarmode=layertools -jar resource-service.jar extract
+COPY ${JAR_FILE} song-service.jar
+RUN java -Djarmode=layertools -jar song-service.jar extract
 
 FROM eclipse-temurin:17
 
@@ -23,6 +23,7 @@ COPY --from=builder workspace/dependencies/ ./
 COPY --from=builder workspace/spring-boot-loader/ ./
 COPY --from=builder workspace/snapshot-dependencies/ ./
 COPY --from=builder workspace/application/ ./
+
 
 # Uses the Spring Boot Launcher to start the application from the layers rather than an uber-JAR
 ENTRYPOINT ["java","org.springframework.boot.loader.launch.JarLauncher"]

@@ -1,0 +1,24 @@
+version: "3.8"
+
+services:
+  song-service:
+    depends_on:
+      - song-postgres
+    image: "song-service"
+    container_name: "song-service"
+    ports:
+      - 8081:8081
+    environment:
+      - BPL_JVM_THREAD_COUNT=50
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://song-postgres:5432/song_service_db
+      - SPRING_PROFILES_ACTIVE=testdata
+
+  song-postgres:
+    image: "postgres:14.4"
+    container_name: "song-postgres"
+    ports:
+      - 5431:5432
+    environment:
+      - POSTGRES_USER=user
+      - POSTGRES_PASSWORD=password
+      - POSTGRES_DB=song_service_db
