@@ -117,3 +117,30 @@ in the cluster. You can verify which objects have been created with the followin
 To get logs: <br/>
 ``` kubectl logs deployment/catalog-service ```
 
+To apply service manifest: <br/>
+``` kubectl apply -f k8s/service.yml ```
+``` kubectl get svc -l app=song-service ``` <br/>
+Other applications within the cluster can reach this service either by
+ClusterIP or its name, but what about us?  How can we reach it? One way is to use
+port forwarding feature offered by kubernetes: <br/>
+``` kubectl port-forward service/catalog-service 9001:80 ```
+Forwarding from 127.0.0.1:8081 -> 8081
+Forwarding from [::1]:8081 -> 8081 
+
+To view pods for song-service: <br/>
+``` kubectl get pods -l app=song-service ```
+Or to view all pods:
+``` kubectl get pods ```
+
+If you delete one of the pods by running: <br/>
+``` kubectl delete pod song-service-{pod-number-generated-by-k8s} ``` <br/>
+you will notice that after running ``` kubectl get pods -l app=song-service ``` one
+more time, you will get still two pods running, because <b>replica</b> is set to 2 in
+deployment.yml file.  You will notice that one of the pods has the AGE of several seconds,
+because it was just created by kubernetes.
+<br/>
+To delete all the kubernetes objects and manifests, open the project folder and run: <br/>
+``` kubectl delete -f k8s ```  <br/>
+To delete kubernetes services as well, navigate to song-deployment/kubernetes/platform/development folder
+and run: <br/>
+``` kubectl delete -f services ```

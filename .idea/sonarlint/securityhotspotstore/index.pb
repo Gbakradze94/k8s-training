@@ -1,0 +1,39 @@
+
+Ñ
+Tsong-service/src/main/java/com/kube/training/songservice/SongServiceApplication.java,f\9\f962dcaabf0cdac4ada0c3d53eb45e6e26bd8b4a
+á
+Wsong-service/src/main/java/com/kube/training/songservice/repository/SongRepository.java,4\6\464475d77a139d960318853ffcff8b13412e5b2b
+ê
+`resource-service/src/main/java/com/kube/training/resourceservice/ResourceServiceApplication.java,1\b\1b0157102bc4509b5644caf4311c7f2b59dd4d6c
+G
+song-service/.gitignore,6\e\6e8579265966514d7308b895321a7ff6c7ea7373
+e
+5song-service/gradle/wrapper/gradle-wrapper.properties,3\c\3cb7d060f5df55d8194104a44f1009924d3c558e
+â
+Ysong-service/src/test/java/com/kube/training/songservice/SongServiceApplicationTests.java,8\4\844a1ccde68e21be1d50ee8b603ebe3a4c97042c
+Ä
+Psong-service/src/main/java/com/kube/training/songservice/api/SongController.java,7\1\711abf44c6a3c9bfae42727af2ad342aa4b4cff2
+S
+#resource-service/docker-compose.yml,8\3\839570d435787d3367fb19bef27adc213e63901c
+I
+song-service/build.gradle,3\0\301162dd2e09fefb395f05e2a2bed23c0410a0c2
+M
+resource-service/build.gradle,b\4\b4fbb502f2049561a8909827e71fd7be8c807be7
+å
+\resource-service/src/main/java/com/kube/training/resourceservice/api/ResourceController.java,8\c\8cf3ff8216679dc5fc796b93b2696f7c67b46691
+K
+resource-service/Dockerfile,5\d\5dec96f3a4b80c665beb42e64a830add2820a856
+|
+Lsong-deployment/kubernetes/platform/development/services/song-postgresql.yml,d\5\d5d1a5a13fb5489cb0e8c76cde2def9d206968f2
+P
+ resource-service/k8s/service.yml,6\d\6dc4e2d03c6b2550191ece9b3c63112c63cbc731
+L
+song-service/k8s/service.yml,c\8\c8f599030b0e0202cb1acb2aa6a6d734dbac3861
+O
+song-service/k8s/deployment.yml,e\3\e3d731f548ef037fd63be5a6463f0641d439f05f
+S
+#resource-service/k8s/deployment.yml,0\1\01703e32866ccd31baa7c7c576829ac1145572e8
+J
+resource-service/readme.md,f\0\f099eb35231d87043a2cd551f7487108ca488524
+9
+	README.md,8\e\8ec9a00bfd09b3190ac6b22251dbb1aa95a0579d

@@ -5,6 +5,7 @@ metadata:
   labels:
     app: resource-service
 spec:
+  replicas: 2
   selector:
     matchLabels:
       app: resource-service
