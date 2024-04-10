@@ -144,3 +144,6 @@ To delete all the kubernetes objects and manifests, open the project folder and 
 To delete kubernetes services as well, navigate to song-deployment/kubernetes/platform/development folder
 and run: <br/>
 ``` kubectl delete -f services ```
+
+To create Helm chart named song: <br/>
+``` helm create song-chart```
