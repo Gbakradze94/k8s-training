@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: resource-service
-          image: resource-service
+          image: gbakradze/resource-service
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 8082

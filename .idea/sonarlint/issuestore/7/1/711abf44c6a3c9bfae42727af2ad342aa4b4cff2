@@ -1,21 +1,0 @@
-
-W	java:S125"<This block of commented-out lines of code should be removed.(¨€Ãs8ğ÷òé1
-X	java:S125"<This block of commented-out lines of code should be removed.(¼‡Û8âÜõòé1
-]	java:S125"<This block of commented-out lines of code should be removed.(³´ô øÿÿÿÿ8ì„öòé1
-]	java:S125*"<This block of commented-out lines of code should be removed.(Í¸²«ùÿÿÿÿ8©£öòé1
-b
-java:S1128"@Remove this unused import 'org.springframework.http.HttpStatus'.(íŸ¤Šúÿÿÿÿ8ø÷òé1
-t
-java:S1128	"RRemove this unused import 'org.springframework.web.bind.annotation.DeleteMapping'.(­ìÎªşÿÿÿÿ8ø÷òé1
-s
-java:S1128"QRemove this unused import 'org.springframework.web.bind.annotation.PathVariable'.(¹ûñÅşÿÿÿÿ8ø÷òé1
-r
-java:S1128"PRemove this unused import 'org.springframework.web.bind.annotation.PostMapping'.(äƒà°ùÿÿÿÿ8ø÷òé1
-r
-java:S1128"PRemove this unused import 'org.springframework.web.bind.annotation.RequestBody'.(â­½Àıÿÿÿÿ8ø÷òé1
-s
-java:S1128"QRemove this unused import 'org.springframework.web.bind.annotation.RequestParam'.(Â¬À·ùÿÿÿÿ8ø÷òé1
-p
-java:S1128"SRemove this unused import 'org.springframework.web.bind.annotation.ResponseStatus'.(¯×ñ8ù÷òé1
-M
-java:S1128"+Remove this unused import 'java.util.List'.(Õë±Äøÿÿÿÿ8ù÷òé1

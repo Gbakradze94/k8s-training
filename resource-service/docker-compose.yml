@@ -4,7 +4,7 @@ services:
   resource-service:
     depends_on:
       - resource-postgres
-    image: "resource-service"
+    image: "gbakradze/resource-service"
     container_name: "resource-service"
     ports:
       - 8082:8082
